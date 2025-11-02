@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Campus Café Finder - 국민대학교 주변 카페 추천</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=ac9c2f5afc1b4547bab8af6cc0724efc&autoload=false&libraries=services" defer></script>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <span class="brand-icon">☕</span>
+                <span class="brand-text">Campus Café Finder</span>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section">
+        <div class="hero-content">
+            <h1 class="hero-title">국민대 주변 카페 추천</h1>
+            <p class="hero-subtitle">목적별 맞춤 카페를 AI로 찾아보세요</p>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <section class="search-card">
+                <h2 class="section-title">검색 조건</h2>
+                <div class="search-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="peopleCount" class="form-label">인원수</label>
+                            <select id="peopleCount" class="form-select">
+                                <option value="1">1명</option>
+                                <option value="2" selected>2명</option>
+                                <option value="3">3명</option>
+                                <option value="4">4명</option>
+                                <option value="5">5명</option>
+                                <option value="6">6명</option>
+                                <option value="7">7명</option>
+                                <option value="8">8명</option>
+                                <option value="9">9명</option>
+                                <option value="10">10명</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="purpose" class="form-label">목적</label>
+                            <select id="purpose" class="form-select">
+                                <option value="date">데이트</option>
+                                <option value="study" selected>스터디</option>
+                                <option value="assignment">과제</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="radius" class="form-label">검색 반경</label>
+                            <select id="radius" class="form-select">
+                                <option value="500">500m</option>
+                                <option value="1000" selected>1km</option>
+                                <option value="3000">3km</option>
+                                <option value="5000">5km</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <button id="searchBtn" class="btn-primary">
+                        <span class="btn-icon">🔍</span>
+                        <span>맞춤 카페 찾기</span>
+                    </button>
+                </div>
+            </section>
+
+            <div class="results-grid">
+                <div class="map-card">
+                    <div class="card-header">
+                        <h3 class="card-title">지도</h3>
+                    </div>
+                    <div id="map" class="map"></div>
+                </div>
+
+                <div class="results-card">
+                    <div class="card-header">
+                        <h3 class="card-title">추천 카페</h3>
+                        <span id="cafeCount" class="badge">0</span>
+                    </div>
+                    <div id="cafeList" class="cafe-list">
+                        <div class="empty-state">
+                            <div class="empty-icon">☕</div>
+                            <p class="empty-text">검색 조건을 선택하고<br>맞춤 카페를 찾아보세요</p>
+                            <p class="empty-subtext">AI 알고리즘으로 목적에 맞는 카페를 추천합니다</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Campus Café Finder</p>
+            <p class="footer-tech">Powered by Kakao Maps API · OpenAI · Custom AI Ranking</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
